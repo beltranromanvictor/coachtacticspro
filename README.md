@@ -88,3 +88,26 @@ Use:
 - **Save + download match plan** for a portable copy of one game.
 
 Browser/site data can be cleared by the operating system or user, so downloaded backups should be treated as the durable copy.
+
+## v3 animation controls
+
+The animation timeline now supports presentation controls for coaching sessions:
+
+- Speed: 0.25x, 0.5x, 0.75x, 1x, 1.5x, 2x
+- Pause / resume during playback
+- Previous / Next phase buttons
+- Keyboard shortcuts: Left Arrow = previous phase, Right Arrow = next phase, Space = pause/resume
+- Phase indicator showing current phase / total phases
+- Keyboard shortcuts are ignored while typing in a text field, number field, textarea, or select.
+
+### Updating an already-installed desktop PWA
+
+1. Replace the files in your GitHub Pages repository with the new version, keeping the same paths.
+2. Wait for GitHub Pages to finish deploying.
+3. Open the installed Coach Tactics Pro desktop app while connected to the internet.
+4. Leave it open briefly so the browser can download and activate the new service worker/cache.
+5. Close the app completely and open it again.
+6. Confirm that the animation controls now show the speed selector and Previous/Pause/Next buttons.
+7. If the old version remains, open the GitHub Pages URL in the browser, refresh once, then close and reopen the installed app.
+
+The v3 service worker uses a new cache name (`coach-tactics-pro-v3`), so it removes the old application cache after activation. Your rosters and match plans are stored separately in browser local storage and are not intentionally erased by this application update. As a precaution, use **Full backup** before major updates.
