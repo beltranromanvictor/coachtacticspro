@@ -140,3 +140,14 @@ The v3 service worker uses a new cache name (`coach-tactics-pro-v3`), so it remo
 4. Close it completely and reopen it once.
 5. The v4 service worker uses a new cache name (`coach-tactics-pro-v4`) and removes older app caches while preserving local roster/match data.
 6. Make a Full Backup before major updates as a precaution.
+
+
+## v5 — Clean layout + reliable keyboard scrub
+- Pitch is always the full-width first row.
+- Below the pitch: Squad / Saved Plays / Match Plan in a stable three-column layout.
+- Match Day and Tactical Library remain available but no longer compete visually with the board.
+- 36 interpolation frames between saved phases for smoother manual scrubbing.
+- Left / Right arrows are captured at app level and work after using buttons/selectors, unless you are actively typing in a text/date/number field.
+- Clicking the pitch restores keyboard focus to the tactical board.
+- Shift + Left / Right jumps between saved keyframes.
+- Space plays/pauses from the current frame.
