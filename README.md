@@ -111,3 +111,32 @@ The animation timeline now supports presentation controls for coaching sessions:
 7. If the old version remains, open the GitHub Pages URL in the browser, refresh once, then close and reopen the installed app.
 
 The v3 service worker uses a new cache name (`coach-tactics-pro-v3`), so it removes the old application cache after activation. Your rosters and match plans are stored separately in browser local storage and are not intentionally erased by this application update. As a precaution, use **Full backup** before major updates.
+
+
+## v4 — Smooth Presentation controls
+
+- Saved phases are now treated as **keyframes**.
+- Left / Right arrows move one interpolation frame at a time instead of jumping directly between phases.
+- Shift + Left / Right jumps to the previous / next keyframe.
+- Click any saved phase to start playback from that keyframe.
+- The timeline slider can scrub to any point in the sequence.
+- **Play from here** starts from the current frame rather than forcing playback from Phase 1.
+- Presentation Mode enlarges the pitch and hides the planning panels while preserving keyboard controls.
+- Escape exits Presentation Mode.
+- The normal interface places the pitch across the full top width; squad, timeline, library, and match tools begin below.
+
+### Keyboard
+- `←` previous animation frame
+- `→` next animation frame
+- `Shift + ←` previous saved keyframe
+- `Shift + →` next saved keyframe
+- `Space` play / pause
+- `Escape` exit Presentation Mode
+
+### Updating an already installed desktop PWA to v4
+1. Replace the repository files with the contents of this v4 package and push/commit.
+2. Wait until GitHub Pages shows `v4 · smooth presentation · offline first`.
+3. Open the installed desktop app while online.
+4. Close it completely and reopen it once.
+5. The v4 service worker uses a new cache name (`coach-tactics-pro-v4`) and removes older app caches while preserving local roster/match data.
+6. Make a Full Backup before major updates as a precaution.
